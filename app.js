@@ -16,9 +16,8 @@ const dbOptions = {
 }
 
 const routes = require('./routes/index');
-// const publicDir = require(__dirname + '/public/');
-//
-// app.use(express.static(publicDir))
+
+app.use(express.static(__dirname + '/public'));
 app.use(myConnection(mysql, dbOptions, 'pool'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
